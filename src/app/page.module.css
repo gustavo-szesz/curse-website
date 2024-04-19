@@ -11,3 +11,18 @@
   font-family: Arial, sans-serif;
   text-align: center;
 }
+
+.gradient-container-footer {
+  width: 100%;
+  height: 20vh; /* Adjust the initial height for responsiveness */
+  min-height: 300px; /* Set a minimum height */
+  background: linear-gradient(to right, #00649d, #05192d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
