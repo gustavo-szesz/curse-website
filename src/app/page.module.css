@@ -14,7 +14,7 @@
 
 .gradient-container-footer {
   width: 100%;
-  height: 20vh; /* Adjust the initial height for responsiveness */
+  height: 10vh; /* Adjust the initial height for responsiveness */
   min-height: 300px; /* Set a minimum height */
   background: linear-gradient(to right, #00649d, #05192d);
   display: flex;
