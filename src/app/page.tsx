@@ -10,6 +10,7 @@ export default function Home() {
       <Navbar />
       <div className={styles['gradient-container']}>
         <div className={styles['card-container']}>
+        <h1>Cursos de <span>Tecnologia!</span></h1>
         <CardCourses title="Veja os planos" description="Mergulhe em conteúdo com a maior comunidade de tecnologia do país." 
         image={<img src='../images/curse.logo.png' alt='react'></img>} />
         </div>
