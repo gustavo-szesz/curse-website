@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link'; // Import Link from Next.js
 
-const pages = ['Cursos', 'Preco', 'Sobre nós', 'Criar Conta'];
+const pages = ['Cursos', 'Preco', 'Sobre nos', 'Criar Conta'];
 const settings = ['Conta', 'Configurações', 'Homepage', 'Logout'];
 
 function ResponsiveAppBar() {
