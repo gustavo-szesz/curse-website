@@ -1,0 +1,58 @@
+body {
+  color: #000;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-weight: bold;
+  color: #777;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.about h3 {
+  margin-top: 1rem;
+}
+
+.about :nth-child(2) {
+    margin-top: 3rem;
+  }
+  
+  .content-center {
+    display: grid;
+    place-items: center;
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    left: 10rem;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .horizontal-center {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
