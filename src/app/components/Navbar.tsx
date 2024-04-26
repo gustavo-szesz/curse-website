@@ -18,6 +18,8 @@ import Link from 'next/link'; // Import Link from Next.js
 const pages = ['Cursos', 'Preco', 'Sobre nos', 'Criar Conta'];
 const settings = ['Conta', 'Configurações', 'Homepage', 'Logout'];
 
+
+
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);

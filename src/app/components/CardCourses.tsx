@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 interface CardCoursesProps {
   title: string;
   description: string;
-  image: React.ReactNode; // Define image as React.ReactNode
+  image: string; // Define image as React.ReactNode
 }
 
 const CardCourses: React.FC<CardCoursesProps> = ({ title, description, image }) => {
@@ -20,37 +20,39 @@ const CardCourses: React.FC<CardCoursesProps> = ({ title, description, image }) 
         sx={{
           maxWidth: 345,
           border: '3px solid #00A6FB',
-          marginLeft: 'auto', // Align the card to the right
-          marginRight: 'auto', // Align the card to the right
+          marginLeft: 'auto',
+          marginRight: 'auto',
           marginTop: '5vh',
-          marginBottom: '5vh'
+          marginBottom: '5vh',
+          display: 'flex',
+          flexDirection: 'column' // Stack children vertically
         }}
       >
-        <CardMedia
-          component="div" // Use a div as the component
-          sx={{ height: 140 }} // Set the height
-        >
-          {image} {/* Render the image passed as a child */}
-        </CardMedia>
-        <CardContent
-          className='gradient-card card container-card card-title card-description'
-        >
-          <Typography gutterBottom variant="h5" component="div">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description}
-          </Typography>
-        </CardContent>
-        <CardActions
-          style={{ backgroundColor: '#051923' }}
-        >
-          <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button>
+        <div>
+          <CardMedia
+            component="div"
+            sx={{ height: 140, width: 100 }}
+          >
+            <img src={image} alt={title} />
+          </CardMedia>
+
+          <CardContent className=' container-card  card-description'>
+            <Typography gutterBottom variant="h5" component="div">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {description}
+            </Typography>
+          </CardContent>
+        </div>
+
+        <CardActions style={{ backgroundColor: '#051923', marginTop: 'auto' }}>
+          <Button size="small">Saiba mais</Button>
         </CardActions>
       </Card>
     </Grid>
   );
 }
+
 
 export default CardCourses;
