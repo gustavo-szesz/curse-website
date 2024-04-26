@@ -10,7 +10,7 @@ import Grid from '@mui/material/Grid';
 interface CardCoursesProps {
   title: string;
   description: string;
-  image: string; // Define image as React.ReactNode
+  image: string; 
 }
 
 const CardCourses: React.FC<CardCoursesProps> = ({ title, description, image }) => {

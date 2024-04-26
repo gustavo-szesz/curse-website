@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import CardCourses from './components/CardCourses';
 import styles from './page.module.css';
 import Footer from './components/FooterComponent';
-import programingCard from './components/images/programing-card.jpg'
 
 
 export default function Home() {
@@ -14,6 +13,8 @@ export default function Home() {
   const devopsCard = "https://i.ibb.co/nzZTx3S/devops.jpg"
   const mobileCard = "https://i.ibb.co/f4B3MGS/mobile-Dev.jpg"
   const frontEndCard = "https://i.ibb.co/26kc14S/front-end.jpg"
+  const dataScience = "https://i.ibb.co/TP7DCWC/data-Science.jpg"
+  const uxCard = "https://i.ibb.co/pJHBPMC/ux-curse.png"
 
   return (
     <main>
@@ -36,9 +37,9 @@ export default function Home() {
         <CardCourses title="Front-End" description="HTML, CSS, React, Angular, JavaScript"
         image={frontEndCard}/>
         <CardCourses title="Data Science" description="Ciência de dados, BI, SQL, NoSql"
-        image={<img src='../images/curse.logo.png' alt='react'></img>}/>
+        image={dataScience}/>
         <CardCourses title="UX e Design" description="Usabilidade e UX, Video e Motion, 3D"
-        image={<img src='../images/curse.logo.png' alt='react'></img>}/>
+        image={uxCard}/>
       </Grid>
 
 

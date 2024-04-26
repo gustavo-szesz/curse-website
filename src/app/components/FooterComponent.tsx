@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left">
         {/* Company name */}
-        <span className="company-name">Your Company Name</span>
+        <span className="company-name">Dev-Comp Academy</span>
       </div>
       <div className="footer-right">
 

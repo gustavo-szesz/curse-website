@@ -1,8 +1,10 @@
+"use client"
 import * as React from 'react';
 import Navbar from '../components/Navbar';
 import styles from '../page.module.css';
 import ModalBasic from '../components/ModalBasic';
 import './sobrenos.css';
+import Footer from '../components/FooterComponent';
 
 const SobreNosPage: React.FC = () => {
     return (
@@ -26,6 +28,9 @@ const SobreNosPage: React.FC = () => {
                 <p>Seja bem-vindo à Empresa de Cursos de Tecnologia!</p>
             </div>
         </div>
+
+        <Footer />
+        
         </main>
     )
 }

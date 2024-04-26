@@ -15,7 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link'; // Import Link from Next.js
 
-const pages = ['Cursos', 'Preco', 'Sobre nos', 'Criar Conta'];
+const pages = ['Cursos', 'Preco', 'Sobre nos', 'Criar Conta', 'Login'];
 const settings = ['Conta', 'Configurações', 'Homepage', 'Logout'];
 
 
@@ -59,7 +59,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Dev-Comp
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

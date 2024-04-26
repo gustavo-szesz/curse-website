@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     borderRadius: 10,
     boxShadow: '0 3px 5px 2px rgba(0, 0, 0, .3)',
     padding: '20px',
-    width: '300px',
+    width: '400px',
     margin: '0 auto',
   },
   form: {
@@ -61,7 +61,7 @@ const CreateAccountForm: React.FC = () => {
       <form className={classes.form} onSubmit={handleSubmit}>
         <TextField
           className={classes.textField}
-          label="Full Name"
+          label="Nome completo"
           variant="outlined"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
@@ -69,7 +69,7 @@ const CreateAccountForm: React.FC = () => {
         />
         <TextField
           className={classes.textField}
-          label="Occupation"
+          label="Ocupação"
           variant="outlined"
           value={occupation}
           onChange={(e) => setOccupation(e.target.value)}
@@ -86,7 +86,7 @@ const CreateAccountForm: React.FC = () => {
         />
         <TextField
           className={classes.textField}
-          label="Telephone"
+          label="Telefone"
           variant="outlined"
           type="tel"
           value={telephone}
@@ -94,7 +94,7 @@ const CreateAccountForm: React.FC = () => {
           fullWidth
         />
         <Button type="submit" variant="contained" color="primary" className={classes.button}>
-          Create Account
+          Criar conta
         </Button>
       </form>
     </div>

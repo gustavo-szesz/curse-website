@@ -140,3 +140,37 @@ a {
     background-position: 100% 50%;
   }
 }
+.container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on smaller screens */
+}
+
+.background-div {
+  flex: 1; /* Take up remaining space */
+  padding: 40px; /* Add padding for spacing */
+}
+
+.info {
+  flex: 1; /* Take up remaining space */
+  padding: 10vh 40px; /* Add padding for spacing (10% of viewport height) */
+}
+
+.info h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 35px;
+  color: #ffffff;
+}
+
+.info p {
+  margin-top: 60px;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    align-items: center; /* Center items horizontally on smaller screens */
+  }
+}
