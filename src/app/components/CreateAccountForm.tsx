@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 const useStyles = makeStyles({
   root: {
@@ -21,20 +23,20 @@ const useStyles = makeStyles({
     marginBottom: '20px',
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: 'white', // Change the color of the border
+        borderColor: 'white',
       },
       '&:hover fieldset': {
-        borderColor: 'white', // Add when hover
+        borderColor: 'white',
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'white', // Add when focused
+        borderColor: 'white',
       },
     },
     '& .MuiInputBase-input': {
-      color: 'white', // change the color of the text to white
+      color: 'white',
     },
     '& .MuiInputLabel-root': {
-      color: 'white', // change the color of the label to white
+      color: 'white',
     },
   },
   button: {
@@ -42,18 +44,44 @@ const useStyles = makeStyles({
   },
 });
 
-
 const CreateAccountForm: React.FC = () => {
   const classes = useStyles();
   const [fullName, setFullName] = useState('');
   const [occupation, setOccupation] = useState('');
   const [email, setEmail] = useState('');
   const [telephone, setTelephone] = useState('');
+  const [message, setMessage] = useState<string | null>(null);
+  const [open, setOpen] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Here you can handle form submission, e.g., send data to the server
-    console.log('Form submitted:', { fullName, occupation, email, telephone });
+    const accountData = { name: fullName, occupation, email, telephone };
+
+    try {
+      const response = await fetch('http://localhost:4000/api/account/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(accountData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        setMessage('Conta criada com sucesso!');
+      } else {
+        const errorData = await response.json();
+        setMessage(`Erro ao criar conta: ${errorData.message}`);
+      }
+    } catch (error) {
+      setMessage(`Erro: ${error instanceof Error ? error.message : 'Erro desconhecido'}`);
+    } finally {
+      setOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -97,6 +125,11 @@ const CreateAccountForm: React.FC = () => {
           Criar conta
         </Button>
       </form>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={message?.includes('Erro') ? 'error' : 'success'}>
+          {message}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
